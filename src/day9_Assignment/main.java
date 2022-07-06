@@ -3,8 +3,7 @@ package day9_Assignment;
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		  System.out.println("Welcome to the Address Book Main Program");
+		 System.out.println("Welcome to the Address Book Main Program");
 
 	        addressbook a1 = new addressbook();
 	        a1.contactList();
@@ -12,6 +11,22 @@ public class main {
 	        a1.contactList();
 	        System.out.println(a1.listData);
 
-	}
+	        System.out.println("if you want to change person Name , reply yes/no : ");
+	        String check = addressbook.scan.nextLine();
 
+	        System.out.println("enter name whose details you want to edit : ");
+	        String name = addressbook.scan.nextLine();
+
+	        if (check.equals("yes")) {
+	            for (contact cThrough : a1.listData) {
+
+	                if (cThrough.getFirstName().equals(name)) {
+	                    System.out.println("enter updated phone number : ");
+	                    cThrough.setPhone(addressbook.scan.next());
+	                    break;
+	                }
+	            }
+	        }
+	        System.out.println(a1.listData);
+	    }
 }
